@@ -452,7 +452,11 @@ while :; do
             shift
             ZFSTYPE="$1"
             case $ZFSTYPE in
-                mirror|raidz)
+                single)
+              	    ZFSMINDISK=1
+		    ZFSTYPE=""
+		    ;; 
+		mirror|raidz)
                     ZFSMINDISK=2
                     ;;
                 raidz2)
